@@ -1,0 +1,45 @@
+[project]
+name = "my_cool_package"
+dynamic = ["version"]
+authors = [{name="Billy Broderick"}]
+description = "example package for sphinx tutorial"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Science/Research",
+]
+
+dependencies = [
+    "numpy>=1.1",
+    "matplotlib>=3.3",
+]
+
+[build-system]
+requires = ["setuptools", "setuptools-scm[toml]"]
+build-backend = "setuptools.build_meta"
+
+[project.optional-dependencies]
+docs = [
+     'sphinx',
+     "pydata-sphinx-theme",
+     'numpydoc',
+     'sphinxcontrib-apidoc',
+     'sphinx-autodoc-typehints',
+     'sphinx-copybutton',
+     "myst-parser",
+     "sphinxcontrib-bibtex",
+     "myst-nb",
+     "jupytext",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools_scm]
+version_scheme = 'python-simplified-semver'
+local_scheme = 'no-local-version'
