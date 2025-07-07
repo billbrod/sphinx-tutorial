@@ -1,0 +1,577 @@
+/**
+ * flatiron theme
+ * reveal.js
+ *
+ * Liz Lovero
+ * Updated: 28 August 2019
+*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Tinos:400,700,400i,700i');
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+body {
+  background: #fff;
+  background-color: #fff;
+  -webkit-text-size-adjust: 200%;
+}
+
+.reveal {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: normal;
+  color: black;
+}
+
+::selection {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.99);
+  text-shadow: none;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.99);
+  text-shadow: none;
+}
+
+.reveal .slides {
+	width: 100%;
+	height: 100%;
+  text-align: left;
+}
+
+.reveal .slides section,
+.reveal .slides section > section {
+  line-height: 1.3;
+  font-weight: inherit;
+  height: inherit;
+  flex-direction: column;
+}
+.reveal .slides section:has(> .column) {
+  display: block !important;
+}
+.landing {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  color: #5c5c5c;
+}
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  text-align: center;
+  margin: 2% 0 20px 0;
+  color: #007f9dff;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-transform: none;
+  text-shadow: none;
+  word-wrap: break-word;
+}
+
+.reveal h1 {
+  text-shadow: none;
+  margin-bottom: 5%;
+  margin-top: 20%;
+}
+
+.reveal h2:not(:has(~ p, ~ div, ~ ul, ~ ol, ~ dl, ~ pre, ~ table)):not(h1 + h2, h2 + h2, p + h2, div + h2) {
+  text-shadow: none;
+  margin-bottom: 5%;
+  margin-top: 20%;
+}
+
+/*********************************************
+ * OTHER
+ *********************************************/
+.reveal p {
+  margin: 20px 0;
+  margin-top: 10%;
+  line-height: 1.3;
+}
+
+.reveal h2 + dl,
+.reveal h2 + ol,
+.reveal h2 + ul {
+  margin-top: 10%;
+}
+.reveal .column p {
+  margin: 0 0;
+}
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal svg,
+.reveal video,
+.reveal iframe {
+  max-width: 95%;
+  max-height: 95%;
+  /* should match height of containing element, but don't stretch */
+  height: inherit;
+  width: inherit;
+  object-fit: contain;
+}
+
+.reveal strong,
+.reveal b {
+  font-weight: bold;
+}
+
+.reveal em {
+  font-style: italic;
+}
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 0 1em;
+}
+
+.reveal ol {
+  list-style-type: decimal;
+}
+
+.reveal ul {
+  list-style-type: disc;
+}
+
+.reveal ul ul {
+  list-style-type: square;
+}
+
+.reveal ul ul ul {
+  list-style-type: circle;
+}
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+  margin-left: 40px;
+}
+
+.reveal dt {
+  font-weight: bold;
+}
+
+.reveal dd {
+  margin-left: 40px;
+}
+
+.reveal blockquote {
+  display: block;
+  position: relative;
+  width: 70%;
+  margin: 20px auto;
+  padding: 5px;
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+  display: inline-block;
+}
+
+.reveal q {
+  font-style: italic;
+}
+
+.reveal pre {
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: 20px auto;
+  text-align: left;
+  font-family: monospace;
+  line-height: 1.2em;
+  word-wrap: break-word;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.reveal code {
+  font-family: monospace;
+  text-transform: none;
+  color: black;
+}
+
+.reveal pre code {
+  display: block;
+  padding: 5px;
+  overflow: auto;
+  max-height: 60%;
+  word-wrap: normal;
+}
+
+.reveal :not(code) > table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  margin: auto;
+  border-spacing: 0;
+  border: 1px solid #e8e8e8;
+  th {
+    font-weight: bold;
+  }
+  th,
+  td {
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    border-bottom: 1px solid;
+  }
+  td {
+    border-width: 1px 0px 1px 0px;
+    border-style: solid;
+    border-color: #e8e8e8;
+  }
+  th:first-child, td:first-child {
+    width: 30%
+  }
+  th[align='center'],
+  td[align='center'] {
+    text-align: center;
+  }
+  th[align='right'],
+  td[align='right'] {
+    text-align: right;
+  }
+  tbody tr:last-child th,
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+
+.reveal table th {
+  font-weight: bold;
+}
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 1px solid;
+}
+
+.reveal table.vert th,
+.reveal table.vert td {
+  border-left: 1px solid;
+}
+
+.reveal table.vert th:first-child .reveal table.vert td:first-child {
+  border-left: none;
+}
+
+.reveal table th[align='center'],
+.reveal table td[align='center'] {
+  text-align: center;
+}
+
+.reveal table th[align='right'],
+.reveal table td[align='right'] {
+  text-align: right;
+}
+
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.reveal sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+.reveal sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  vertical-align: top;
+}
+
+.reveal small * {
+  vertical-align: top;
+}
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a {
+  color: #537eba;
+  text-decoration: none;
+  -webkit-transition: color 0.15s ease;
+  -moz-transition: color 0.15s ease;
+  transition: color 0.15s ease;
+}
+
+.reveal a:hover {
+  color: #304e77;
+  text-shadow: none;
+  border: none;
+}
+
+.reveal .roll span:after {
+  color: #fff;
+  background: #375989;
+}
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+
+.reveal div:has(> svg),
+.reveal p:has(> video),
+.reveal p:has(> img) {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* slide titles are almost always h2 */
+.reveal h2 ~ div:has(> svg),
+.reveal h2 ~ p:has(> video),
+.reveal h2 ~ p:has(> img) {
+  margin-top: 0;
+  display: flex;
+  align-items: start;
+  height: 90%;
+}
+
+.reveal section svg,
+.reveal section video,
+.reveal section img {
+  background: rgba(255, 255, 255, 0.12);
+  display:block;
+  margin:0;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.reveal section img.plain {
+  border: 0;
+  box-shadow: none;
+}
+
+.reveal a img {
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+
+.reveal a:hover img {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #537eba;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls {
+  color: #537eba;
+}
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2);
+  color: #007f9dff;
+}
+
+.reveal .progress span {
+  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+}
+
+/*********************************************
+ * PRINT BACKGROUND
+ *********************************************/
+@media print {
+  .backgrounds {
+    background-color: #fff;
+  }
+}
+
+.reveal h1 {
+  font-size: 3em;
+}
+
+.reveal h2 {
+  font-size: 2em;
+}
+
+.reveal .margin-top{
+  margin-top: 10%;
+}
+
+.reveal h3 {
+  font-size: 1.25em;
+}
+
+.reveal h4 {
+  font-size: 1em;
+}
+
+.reveal li {
+  margin-bottom: 0.3em;
+}
+
+code {
+  padding: 0.2rem 0.5rem;
+  margin: 0 0.2rem;
+  background: #f1f1f1;
+  border-radius: 4px;
+  color: #222;
+}
+
+.reveal pre {
+  box-shadow: none !important;
+}
+
+.reveal pre code {
+  margin: 36px 0;
+  padding: 5px 15px;
+}
+
+body:before {
+  content: url('assets/CCN.png');
+  position: fixed;
+  bottom: 30px;
+  left: 12px;
+}
+
+/* body:after {
+  content: url("/Theme_Demo/assets/sciware-final-footer.png");
+  position: fixed;
+  bottom: 30px;
+  left: 177px;
+} */
+
+.align-left {
+  text-align: left !important;
+}
+
+.align-right {
+  text-align: right !important;
+}
+
+.spacer {
+  padding: 10px 0;
+}
+
+div.two-column {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: space-between;
+}
+.grid-item > pre {
+  margin: 0;
+  width: 100%;
+}
+
+.grid-item > pre code {
+  margin: 0;
+}
+
+.big-math > span {
+  font-size: 100% !important;
+}
+
+/*********************************************
+ * Fragments
+ *********************************************/
+
+.reveal .fragment.appear-disappear {
+	opacity: 0;
+	display: none;
+}
+.reveal h2.fragment.appear-disappear.current-fragment {
+	display: block;
+}
+.reveal .fragment.appear-disappear.current-fragment {
+	opacity: 1;
+	display: inline;
+}
+.reveal .fragment.disappear {
+  opacity: 1;
+  display: inline;
+  visibility: inherit;
+}
+.reveal h2.fragment.disappear {
+	display: block;
+}
+.reveal .fragment.disappear.visible {
+  opacity: 0;
+  display: none;
+  visibility: hidden;
+}
+.reveal .overlap-parent {
+  position: relative;
+  height: 100%;
+}
+.reveal .overlap-code-grid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0, -50%);
+}
+.reveal .overlap-item svg {
+  max-height: none;
+  max-width: none;
+}
+.reveal .overlap-item {
+  background: none;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.reveal .overlap-center {
+  top: 50%;
+  left: 50%;
+}
+div:has(> svg).logo-title {
+  width:80%;
+  align-self:center;
+}
+.two-columns-text {
+  column-count: 2;
+  column-gap: 3em;
+  font-size: 30px;
+}
+.code-vis-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  position: relative;
+  top: 20%;
+}
+.reveal h2 ~ div.code-vis-grid {
+  top: 5%;
+}
+.code-vis-grid video,
+.code-vis-grid img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.reveal pre {
+  height: fit-content;
+  margin: 0;
+}
