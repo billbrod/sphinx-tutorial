@@ -1,3 +1,3 @@
 [submodule "reveal.js"]
-	path = site/reveal.js
+	path = sphinx-tutorial/reveal.js
 	url = git@github.com:hakimel/reveal.js.git
